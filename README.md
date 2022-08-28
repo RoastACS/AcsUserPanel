@@ -1,2 +1,2 @@
 # searchfromxui
-A noob search website from xui
+Self-usage php project.PLZ ignore this project.
