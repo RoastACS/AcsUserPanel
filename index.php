@@ -16,7 +16,7 @@ class acs extends SQLite3
     {
         function __construct()
         {
-            $this->open('x-ui.db');
+            $this->open('/etc/x-ui/x-ui.db');
         }
     }
     $db = new acs();
@@ -29,9 +29,10 @@ class acs extends SQLite3
     $arr1=$db->querySingle("SELECT up, down FROM inbounds WHERE remark=$s", true);
     $traffic=intval(($arr1['down']+$arr1['up'])/"1073741824");
     echo "您所用的流量为：".$traffic."GB（将会自动取整）";
-    echo "<a href='https://t.yoimiya.love/calculate_old_a.php?name=$traffic'><br/>流量价格一键计算（老用户），需先查询</a>";
-    echo "<a href='https://t.yoimiya.love/calculate_new_a.php?name=$traffic'><br/>流量价格一键计算（新用户），需先查询</a>";
-    echo "<h5>抱歉，当前仅支持A型订阅一键计算，B型订阅计算仍在开发</h5>";
+    echo "<a href='https://t.yoimiya.love/calculate_old_a.php?name=$traffic'><br/>PlanA流量价格一键计算（老用户）</a>";
+    echo "<a href='https://t.yoimiya.love/calculate_new_a.php?name=$traffic'><br/>PlanA流量价格一键计算（新用户）</a>";
+    echo "<a href='https://t.yoimiya.love/calculate_old_b.php?name=$traffic'><br/>PlanB流量价格一键计算（老用户）</a>";
+    echo "<a href='https://t.yoimiya.love/calculate_new_b.php?name=$traffic'><br/>PlanB流量价格一键计算（新用户）</a>";
     echo "<hr/>Aloha Cloud Studio</br>";
     $db->close();
 ?>
