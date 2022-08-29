@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="">
-<head><title>Calculator_TypeA</title></head>
+<head><title>Calculator_TypeB</title></head>
 <body>
 <h3>ACS流量价格计算器(B型)</h3>
 <h5>老用户版</h5>
@@ -16,6 +16,10 @@ if(!isset($_GET['name']))
 $traffic=(int)$_GET['name'];
 function cal($traffic)
 {
-    return 0.4+$traffic*0.07;
+    $price = 0.4+$traffic*0.07;
+    if($price<=4)
+        return $price;
+    else
+        return 4;
 }
 echo "<hr/>总价格为：".cal($traffic)."RMB";

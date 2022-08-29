@@ -37,7 +37,10 @@ function cal($traffic)
     else
     {
         $price = 0.5 + 0.7 + 1.1 +($traffic - 30) * 0.12;
-        return $price;
+        if($price<=4)
+            return $price;
+        else
+            return 4;
     }
 }
 echo "<hr/>总价格为：".cal($traffic)."RMB";
