@@ -1,2 +1,2 @@
-# searchfromxui
-Self-usage php project.PLZ ignore this project.
+# searchfromanysqlite
+Self-usage php project.Please ignore this project if you see it.
