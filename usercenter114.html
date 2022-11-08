@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACS用户中心</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        button{
+            border-radius: 4px;
+            background-color: #25b6b6;
+            border: none;
+            color: #23242a;
+            text-align: center;
+            font-size: 10px;
+            padding: 15px;
+            width: 100px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
+            vertical-align:middle;
+        }
+        .footer{
+            position: absolute;
+            bottom: 1%;
+            left: 45%;
+            color: #36ecec;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="imgBx">
+                <img src="balance.jpg" alt="">
+            </div>
+            <div class="content">
+                <h2>账号概述</h2>
+                <p>当前登录账号：$account<br>
+                    <button onclick="location.href='https://t.yoimiya.love/changepassword.php'">修改密码</button><br>
+                    <button onclick="location.href='https://t.yoimiya.love/quit.php'">退出登录</button>
+                </p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="imgBx">
+                <img src="traffic.jpg" alt="">
+            </div>
+            <div class="content">
+                <h2>节点详细</h2>
+                <p>您所使用的流量为：<br>
+                    $traffic GB<br>
+                    <button onclick="location.href='https://t.yoimiya.love/download.php'">下载软件</button><br>
+                    <button onclick='copy(text="$link")'>复制地址</button>
+                </p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="imgBx">
+                <img src="link.jpg" alt="">
+            </div>
+            <div class="content">
+                <h2>余额管理</h2>
+                <p>您的余额为：<br>
+                    $balance 软妹币<br>
+                    当前预估费用：<br>
+                    $price 软妹币<br>
+                    <button onclick="alert('该功能没有开发完成~')">一键结算</button>
+                </p>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <address>ALOHA Cloud Studio</address>
+    </footer>
+    <script>
+        function copy(text = ''){
+            let input = document.createElement('input')
+            input.style.position = 'fixed'
+            input.style.top = '-10000px'
+            input.style.zIndex = '-999'
+            document.body.appendChild(input)
+            input.value = text
+            input.focus()
+            input.select()
+            try {
+                let result = document.execCommand('copy')
+                document.body.removeChild(input)
+                if (!result || result === 'unsuccessful') {
+                    console.log('复制失败!')
+                } else {
+                    console.log('复制成功~')
+                }
+            } catch (e) {
+                document.body.removeChild(input)
+                alert('当前浏览器不支持复制功能，请检查更新或更换其他浏览器操作')
+            }
+            alert('复制成功~')
+        }
+    </script>
+</body>
+</html>

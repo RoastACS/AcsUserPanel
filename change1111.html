@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+    <meta name="apple-mobile-web-app-title" content="CodePen">
+
+    <link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+
+
+    <title>修改密码</title>
+
+
+
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap');
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            display: grid;
+            place-content: center;
+            font-size: 3rem;
+            font-family: "Ubuntu", "ZCOOL KuaiLe",sans-serif,cursive;
+            background: #23242a;
+        }
+
+        form {
+            width: 400px;
+        }
+
+        label {
+            display: inline-block;
+            padding-block: 0.8rem;
+            line-height: 1.6;
+            color: #36ecec;
+        }
+
+        input {
+            font-size: inherit;
+            width: 100%;
+            color: #219d9d;
+            outline: none;
+            display: block;
+            /*   margin: 0; */
+            font-weight: 400;
+            line-height: 1.6;
+            padding: 3px 3px 3px 10px;
+            border-radius: 20px;
+            border: 1px solid #219d9d;
+            background-color: transparent;
+            transition: border-color 0.2s ease-in-out;
+            background-repeat: no-repeat;
+            background-position: right 2% center;
+            background-size: 2rem 2rem;
+        }
+
+        input:focus {
+            border-color: #36ecec;
+        }
+
+        input[aria-valid="false"] {
+            border-color: #da2828;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMicgaGVpZ2h0PScxMicgZmlsbD0nbm9uZScgc3Ryb2tlPScjZGU0NDM3JyB2aWV3Qm94PScwIDAgMTIgMTInPjxjaXJjbGUgY3g9JzYnIGN5PSc2JyByPSc0LjUnLz48cGF0aCBzdHJva2UtbGluZWpvaW49J3JvdW5kJyBkPSdNNS44IDMuNmguNEw2IDYuNXonLz48Y2lyY2xlIGN4PSc2JyBjeT0nOC4yJyByPScuNicgZmlsbD0nI2RlNDQzNycgc3Ryb2tlPSdub25lJy8+PC9zdmc+');
+        }
+
+        input[aria-valid="true"] {
+            border-color: #37c625;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc4JyBoZWlnaHQ9JzgnIHZpZXdCb3g9JzAgMCA4IDgnPjxwYXRoIGZpbGw9JyMzN0M2MjUnIGQ9J00yLjMgNi43M0wuNiA0LjUzYy0uNC0xLjA0LjQ2LTEuNCAxLjEtLjhsMS4xIDEuNCAzLjQtMy44Yy42LS42MyAxLjYtLjI3IDEuMi43bC00IDQuNmMtLjQzLjUtLjguNC0xLjEuMXonLz48L3N2Zz4=');
+        }
+
+        .form-control {
+            margin-top: 50px;
+        }
+        button{
+            border-radius: 4px;
+            background-color: #36ecec;
+            border: none;
+            color: #23242a;
+            text-align: center;
+            font-size: 10px;
+            padding: 15px;
+            width: 100px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
+            vertical-align:middle;
+        }
+    </style>
+
+    <script>
+        window.console = window.console || function(t) {};
+    </script>
+
+
+
+    <script>
+        if (document.location.search.match(/type=embed/gi)) {
+            window.parent.postMessage("resize", "*");
+        }
+    </script>
+
+
+</head>
+
+<body translate="no" >
+<form action="changepassword.php" method="post">
+    <div class="form-control">
+        <label>输入新的密码：</label>
+        <input type="text" name="value" required>
+        <button type="submit">提交修改</button>
+    </div>
+
+</form>
+<script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
+
+
+<script id="rendered-js" >
+    const inputs = document.querySelectorAll('input');
+    inputs.forEach(input => input.addEventListener('keyup', validateInput));
+
+    function validateInput(e) {
+        e.target.setAttribute(
+            'aria-valid',
+            e.target.value ? 'true' : 'false');
+
+    }
+    //# sourceURL=pen.js
+</script>
