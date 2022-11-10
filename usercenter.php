@@ -21,17 +21,20 @@ class ACSDB extends SQLite3
     }
 }
 
-function cal_b($traffic)
-{
-    $price = 0.7 + $traffic * 0.075;
-    if ($price < 1)
-        return 1;
-    else if ($price < 4)
-        return $price;
-    else
-        return 4;
-}
 function cal_a($traffic)
+{
+    if($traffic <= 20)
+    {
+        $price = $traffic * 0.1;
+        return $price;
+    }
+    else
+    {
+        $price = 2 +($traffic - 20) * 0.15;
+        return $price;
+    }
+}
+function cal_a_old($traffic)
 {
     if($traffic <= 20)
     {
