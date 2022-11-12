@@ -76,16 +76,30 @@
                 版本号：5.36<br>
                 Released on 20 Sep 2022<br>
                 <button onclick="location.href='https://t.yoimiya.love/v2rayN.zip'">下载</button><br>
+                <button onclick="location.href='https://github.com/2dust/v2rayN'">Github</button><br>
             </p>
         </div>
     </div>
     <div class="card">
         <div class="content">
-            <h2>安卓端下载</h2>
+            <h2>安卓端V2rayNG</h2>
             <p>
                 版本号：1.7.23<br>
                 Released on 21 Oct 2022<br>
                 <button onclick="location.href='https://t.yoimiya.love/v2rayNG.apk'">下载</button><br>
+                <button onclick="location.href='https://github.com/2dust/v2rayNG'">Github</button><br>
+            </p>
+        </div>
+    </div>
+        <div class="card">
+        <div class="content">
+            <h2>Mac端V2rayU</h2>
+            <p>
+                版本号：3.3.0<br>
+                Released on 19 Aug 2022<br>
+                <button onclick="location.href='https://t.yoimiya.love/V2rayU-64.dmg'">下载</button><br>
+                <button onclick="location.href='https://t.yoimiya.love/V2rayU-arm64.dmg'">下载ARM版</button><br>
+                <button onclick="location.href='https://github.com/yanue/V2rayU'">Github</button><br>
             </p>
         </div>
     </div>

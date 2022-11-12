@@ -8,16 +8,8 @@ $c='"'.$cookie.'"';
 
 function cal_a($traffic)
 {
-    if($traffic <= 20)
-    {
-        $price = $traffic * 0.1;
-        return $price;
-    }
-    else
-    {
-        $price = 2 +($traffic - 20) * 0.15;
-        return $price;
-    }
+    $price = $traffic * 0.1;
+    return $price;
 }
 class XUIDB extends SQLite3
 {
@@ -43,6 +35,11 @@ $balance=$result2['balance'];
 $link=$result2['link'];
 $price=cal_a($traffic);
 $resl_balance=$balance-$price;
+if($traffic==0&&$price==0){
+    echo "<script>alert('你并未使用足以结算的流量哦！')</script>";
+    echo "<script>location.href='https://t.yoimiya.love/usercenter.php'</script>";
+    return;
+}
 $opr_usrsql="UPDATE username set balance = $resl_balance where account=$c;";
 $opr_trafsql="UPDATE inbounds set down = 0 where remark=$c;";
 $resl=$message->exec($opr_usrsql);

@@ -22,16 +22,7 @@ class ACSDB extends SQLite3
 }
 function cal_a($traffic)
 {
-    if($traffic <= 20)
-    {
-        $price = $traffic * 0.1;
-        return $price;
-    }
-    else
-    {
-        $price = 2 +($traffic - 20) * 0.15;
-        return $price;
-    }
+    return $traffic * 0.1;
 }
 $user=new XUIDB();
 $result=array();
